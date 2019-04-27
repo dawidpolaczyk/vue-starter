@@ -1,27 +1,21 @@
 <template>
-  <div id="app">
-    <h1>Witaj w systemie do zapisów na zajęcia</h1><br><br>
-    
+   <div>
+      <label>Zaloguj się e-mailem</label>
+
     <div v-if="logged">
         Witaj {{ email }}<br><br>
       <button @click="logOut()">Wyloguj</button>
     </div>
 
     <div v-else>
-      <login-form2 @login="logIn($event)" button-label="test"></login-form2>
+      <button @click="logIn()" button-label="test"></button>
     </div>
-</div>
-
+  </div>
 </template>
 
 <script>
-import "milligram";
-import LoginForm2 from "./LoginForm2";
 export default {
-    components: {
-      LoginForm2
-    },
-data() {
+ data() {
      return {
         email: '',
         password: '',
@@ -40,8 +34,4 @@ data() {
     }
  }
 }
-
 </script>
-
-<style>
-</style>
